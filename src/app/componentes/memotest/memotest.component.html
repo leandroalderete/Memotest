@@ -1,8 +1,7 @@
 <div class="container container-fluid ">
     <div class="row">
-        <div *ngFor="let pieza of piezas" class="col-2" (click)="validar();pieza.seleccionada=!pieza.seleccionada;"[ngClass]="{'descubierta':pieza.descubierta}">
-            <img class="rounded-circle" [src]="dorso" style="max-width: 100%;" *ngIf="!pieza.seleccionada&&!pieza.descubierta"/>
-            <img class="rounded-circle" [src]="pieza.imagen" style="max-width: 100%;" *ngIf="pieza.seleccionada||pieza.descubierta"  />
+        <div *ngFor="let a of piezas" class=" offset-1 col-2" [ngClass]="{'descubierta':a.descubierta}">
+            <app-pieza  [acavengaelvalordelapieza]="a" (salida)="validar();a.seleccionada=!a.seleccionada;" ></app-pieza>
         </div>
     </div>
 </div>
